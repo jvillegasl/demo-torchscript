@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "*.yml": "yaml",
+        "type_traits": "cpp"
+    },
+    "terminal.integrated.profiles.windows": {
+        "Workspace Bash": {
+            "source": "Git Bash",
+            "args": ["--init-file", "${workspaceFolder}/profile.sh"]
+        }
+    },
+	"terminal.integrated.defaultProfile.windows": "Workspace Bash"
+}
