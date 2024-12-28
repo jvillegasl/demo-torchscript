@@ -3,7 +3,7 @@
 source ~/.bashrc
 
 export-model() {
-	python model/main.py
+	python model/main.py --export
 }
 
 latest-model() {
