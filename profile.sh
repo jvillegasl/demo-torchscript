@@ -2,28 +2,32 @@
 
 source ~/.bashrc
 
+SCRIPTPATH=$PWD
+
 export-model() {
-	python model/main.py --export
+	python "${SCRIPTPATH}/model/main.py" --export
 }
 
 latest-model() {
-	local model=`ls model/build/*.pt | sort -r | head -n 1`
-	echo $PWD/$model
+	local model=`ls ${SCRIPTPATH}/model/build/*.pt | sort -r | head -n 1`
+	echo $model
 }
 
 clear-cpp() {
-	rm -rf cpp/build
+	rm -rf ${SCRIPTPATH}/cpp/build
 }
 
 build-cpp() {
-	cd cpp
+	local initial_path=$PWD
+	
+	cd ${SCRIPTPATH}/cpp
 	mkdir -p build
 	cd build
 
 	cmake ..
 	cmake --build . --config Release
 
-	cd ../..
+	cd $initial_path
 }
 
 pred() {
@@ -36,5 +40,5 @@ pred() {
 		model_path=$line
 	fi
 
-	./cpp/build/Release/simple-torchscript.exe $model_path
+	${SCRIPTPATH}/cpp/build/Release/simple-torchscript.exe $model_path
 }
