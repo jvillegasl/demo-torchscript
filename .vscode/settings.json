@@ -1,7 +1,11 @@
 {
     "files.associations": {
         "*.yml": "yaml",
-        "type_traits": "cpp"
+        "type_traits": "cpp",
+        "ostream": "cpp",
+        "chrono": "cpp",
+        "iostream": "cpp",
+        "thread": "cpp"
     },
     "terminal.integrated.profiles.windows": {
         "Workspace Bash": {
