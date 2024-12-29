@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include <memory>
+#include <chrono>
+#include <thread>
 
 int main(int argc, const char *argv[])
 {
@@ -28,9 +30,17 @@ int main(int argc, const char *argv[])
 		// Execute the model and turn its output into a tensor.
 		at::Tensor output = module.forward(inputs).toTensor();
 
+		std::chrono::seconds duration(2);
+
 		std::cout << output1 << std::endl;
+		std::this_thread::sleep_for(duration);
+
 		std::cout << output2 << std::endl;
+		std::this_thread::sleep_for(duration);
+
 		std::cout << output3 << std::endl;
+		std::this_thread::sleep_for(duration);
+
 		std::cout << output << std::endl;
 	}
 	catch (const c10::Error &e)
