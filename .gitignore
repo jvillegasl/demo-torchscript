@@ -1,2 +1,4 @@
 build/
-
+obj/
+bin/
+node_modules/
