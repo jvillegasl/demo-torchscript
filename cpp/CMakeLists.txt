@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.18 FATAL_ERROR)
 project(simple-torchscript)
 
+set(CMAKE_GENERATOR_TOOLSET "cuda=C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.4")
 list(APPEND CMAKE_PREFIX_PATH "~/cpp/libtorch")
 
 find_package(Torch REQUIRED)
