@@ -11,6 +11,10 @@ latest-model() {
 	echo $PWD/$model
 }
 
+clear-cpp() {
+	rm -rf cpp/build
+}
+
 build-cpp() {
 	cd cpp
 	mkdir -p build
